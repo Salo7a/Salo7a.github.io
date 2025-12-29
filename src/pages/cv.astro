@@ -1,0 +1,79 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Profile</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Versatile Software Engineer with 3+ years of experience building robust, scalable applications for cloud and desktop. I
+    design cloud-native microservices, responsive frontends, and AI-enabled workflows with a focus on performance,
+    observability, and secure multi-tenant architectures.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="B.S. Systems & Biomedical Engineering"
+      subtitle="2016 – 2021 | Cairo University, Cairo, Egypt"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Software Engineer at Voyance"
+      subtitle="2023 – Present | Medical imaging platform & acquisition software"
+    >
+      Built the VPAX cloud-native PACS and VoyanceX acquisition app. Engineered caching and query optimizations that handled
+      150x peak traffic while cutting DB costs, introduced a BFF to speed up the React micro-frontend by 25%, enforced
+      granular RBAC for multi-tenant security, integrated Dropbox/OneDrive, and expanded hardware compatibility in the C#
+      desktop.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Freelance Developer"
+      subtitle="2021 – 2023 | Web development"
+    >
+      Delivered custom websites and integrations using NodeJS, WordPress, and Moodle. Managed client communication end-to-end
+      to align shipped features with business needs.
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Publications</div>
+  </div>
+
+  <ul class="list-disc mx-6 mb-10 grid gap-2">
+    <li>
+      <a href="https://doi.org/10.1109/NRSC61581.2024.10510468.2024" target="_blank">
+        Cloud-Based AI-Enhanced Dual-Mode System for Coronary Artery Calcification Detection and Quantification (NRSC 2024)
+      </a>
+    </li>
+  </ul>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <ul class="list-disc md:columns-3 columns-2 mx-6">
+    <li>JavaScript / TypeScript / Python / Java / C / C# / PHP</li>
+    <li>NodeJS, NestJS, Express, Spring Boot, Flask</li>
+    <li>React, Next.js, BFF patterns, performance tuning</li>
+    <li>Microservices, NATS, Kubernetes, Docker, CI/CD</li>
+    <li>Databases: MySQL, PostgreSQL, MongoDB, Redis, SQLite</li>
+    <li>ORMs & Data: Sequelize, TypeORM, Prisma</li>
+    <li>AI & Data: LangChain, RAG, PyTorch, Pandas, OpenCV</li>
+    <li>Desktop & Embedded: PyQt, C#, ATmega32, hardware integration</li>
+    <li>Security & Auth: JWT, RBAC, OAuth, multi-tenant isolation</li>
+    <li>Cloud & DevOps: GCP, AWS, GitHub Actions, observability</li>
+  </ul>
+</BaseLayout>

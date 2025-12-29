@@ -1,0 +1,273 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+
+const projectSections = [
+  {
+    title: "Featured Flagship Projects",
+    items: [
+      {
+        title: "VPAX & VoyanceX (Medical Imaging Ecosystem)",
+        img: "/projects/Voyance.png", // Replace with actual project screenshot
+        desc: "A cloud-native PACS and C# acquisition software suite. Engineered the system to handle 150x peak traffic loads and reduced database costs by 30% via advanced query optimization. Implemented a Backend-for-Frontend (BFF) to decrease load times by 25% and designed a granular RBAC system for secure multi-tenancy.",
+        tags: ["Cloud-Native", "C#", "React", "Microservices", "RBAC", "Optimization"],
+        repoUrl: "#", // Add your Repo URL
+        demoUrl: "#", // Add your Live Site URL
+        badges: ["Flagship", "MedTech"],
+        relatedPapers: [],
+      },
+      {
+        title: "AI-Powered Email Client",
+        img: "/projects/post_img.png",
+        desc: "A generative AI email client built with NestJS and Postgres. Features a 'Chat with your Inbox' RAG system, thread summarization, and auto-replies. Designed with a provider-agnostic architecture to seamlessly support Gmail, Outlook, and other providers.",
+        tags: ["NestJS", "Postgres", "LangChain", "RAG", "Generative AI", "TypeScript"],
+        repoUrl: "#",
+        demoUrl: "https://maxwel.ai",
+        badges: ["AI", "Backend"],
+        relatedPapers: [],
+      },
+      {
+        title: "Microservices Ticketing Platform",
+        img: "/projects/post_img.png",
+        desc: "A scalable, event-driven e-commerce exchange for browsing, buying, and selling tickets. Built using a Microservices architecture with NATS for event communication, Redis/Mongo for storage, and Stripe for payments. Secured with JWT auth and deployed via Kubernetes.",
+        tags: ["NodeJS", "NextJS", "Docker", "Kubernetes", "NATS", "Redis", "Stripe"],
+        repoUrl: "https://github.com/Salo7a/My-Tickets-Market",
+        demoUrl: "#",
+        badges: ["Backend", "Scalability"],
+        relatedPapers: [],
+      },
+      {
+        title: "Medical Image Analysis Plugin",
+        img: "/projects/post_img.png",
+        desc: "A 3DSlicer plugin for cardiac CT assessment and health risk calculation. Uses PyTorch for deep learning segmentation and Flask on AWS EC2 for hybrid cloud processing. Research published in the 2024 41st National Radio Science Conference (NRSC).",
+        tags: ["Python", "PyQt5", "PyTorch", "AWS", "Flask", "3DSlicer"],
+        repoUrl: "https://github.com/Salo7a/Automatic-CaScoring-From-Chest-CT",
+        demoUrl: "#", // Linked to publication DOI
+        badges: ["Research", "AI/MedTech"],
+        relatedPapers: [
+          { label: "NRSC 2024 Paper", url: "https://doi.org/10.1109/NRSC61581.2024.10510468" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Web Development & Backend Systems",
+    items: [
+      {
+        title: "ERP System for Student Organizations",
+        img: "/projects/post_img.png",
+        desc: "A management system used by 2000+ students to handle recruitment, interviews, and KPIs. Integrates NodeJS/Express with Google APIs (Sheets, Recaptcha) for live data syncing and simplified administration.",
+        tags: ["NodeJS", "MySQL", "Google APIs", "Express", "Bootstrap"],
+        repoUrl: "https://github.com/Salo7a/ERP-System-HRPortal",
+        demoUrl: "#",
+        badges: ["Web"],
+        relatedPapers: [],
+      },
+      {
+        title: "Healthcare CMMS",
+        img: "/projects/post_img.png",
+        desc: "A Computerized Maintenance Management System for medical assets. Manages preventive/corrective work orders and inventory with real-time notifications via Socket.IO.",
+        tags: ["NodeJS", "Socket.IO", "SQLite", "Sequelize", "Real-time"],
+        repoUrl: "https://github.com/Salo7a/Healthcare-CMMS",
+        demoUrl: "#",
+        badges: ["Backend"],
+        relatedPapers: [],
+      },
+      {
+        title: "Vending Machine API",
+        img: "/projects/post_img.png",
+        desc: "A secure REST API for automated retail. Features deposit/withdrawal logic, product management, and stock tracking. Implements JWT-based RBAC and robust exception handling with Swagger documentation.",
+        tags: ["Java", "Spring Boot", "PostgreSQL", "Swagger", "Security"],
+        repoUrl: "https://github.com/Salo7a/spring-boot-vending-api",
+        demoUrl: "#",
+        badges: ["API"],
+        relatedPapers: [],
+      },
+      {
+        title: "Store API",
+        img: "/projects/post_img.png",
+        desc: "A scalable e-commerce backend where users can list items and generate invoices. Utilizes NestJS interceptors for unified responses and TypeORM for efficient database management.",
+        tags: ["NestJS", "TypeORM", "MySQL", "API Design"],
+        repoUrl: "#",
+        demoUrl: "#",
+        badges: ["API"],
+        relatedPapers: [],
+      },
+      {
+        title: "Food Ordering App",
+        img: "/projects/post_img.png",
+        desc: "A full-stack MERN application allowing users to browse menus, place orders, and track cart state. Built with TypeScript and Redux for type-safe state management.",
+        tags: ["React", "Redux", "Express", "MongoDB", "TypeScript"],
+        repoUrl: "https://github.com/Salo7a/food-order-app",
+        demoUrl: "#",
+        badges: ["Full-Stack"],
+        relatedPapers: [],
+      },
+      {
+        title: "DMaxCare (Dental HIS)",
+        img: "/projects/post_img.png",
+        desc: "A Dental Services-Oriented Hospital Information System. Designed the full database schema and implemented both backend and frontend using Sequelize ORM and Bootstrap.",
+        tags: ["NodeJS", "MySQL", "Sequelize", "Bootstrap"],
+        repoUrl: "https://github.com/Salo7a/Dental-Clinic-System",
+        demoUrl: "#",
+        badges: ["Healthcare"],
+        relatedPapers: [],
+      },
+    ],
+  },
+  {
+    title: "AI, Data Science & Desktop Tools",
+    items: [
+      {
+        title: "Multi-Modal Data Analysis Tool",
+        img: "/projects/post_img.png",
+        desc: "A versatile tool for processing tabular, image, and text data. Generates statistical covariance (Pandas), color histograms (OpenCV), and Word2Vec visualizations (T-SNE).",
+        tags: ["Python", "React", "Flask", "OpenCV", "NLP", "Pandas"],
+        repoUrl: "https://github.com/Salo7a/COVID-19-Visualizer",
+        demoUrl: "#",
+        badges: ["Data", "Full-Stack"],
+        relatedPapers: [],
+      },
+      {
+        title: "Songs Identifier",
+        img: "/projects/post_img.png",
+        desc: "An audio fingerprinting tool that identifies songs by comparing extracted features against a database. Displays similarity percentages and metadata using a PyQt5 interface.",
+        tags: ["Python", "PyQt5", "Audio Processing", "Algorithms"],
+        repoUrl: "https://github.com/Salo7a/Shazam-Clone",
+        demoUrl: "#",
+        badges: ["DSP"],
+        relatedPapers: [],
+      },
+      {
+        title: "Music Equalizer & Visualizer",
+        img: "/projects/post_img.png",
+        desc: "A real-time audio player featuring a custom equalizer and animated frequency visualizations. Built using NumPy and SciPy for signal processing.",
+        tags: ["Python", "NumPy", "SciPy", "DSP"],
+        repoUrl: "https://github.com/Salo7a/Music-Equalizer-and-Visualizer",
+        demoUrl: "#",
+        badges: ["DSP"],
+        relatedPapers: [],
+      },
+    ],
+  },
+  {
+    title: "Embedded Systems & IoT",
+    items: [
+      {
+        title: "Smart Hospital Registration System",
+        img: "/projects/post_img.png",
+        desc: "IoT solution easing patient queuing. Integrates a smart kiosk (measuring Heart Rate, SpO2) and an NFC-enabled Android app for instant inpatient record management.",
+        tags: ["Java", "Android", "IoT", "NFC", "PHP"],
+        repoUrl: "#",
+        demoUrl: "#",
+        badges: ["Embedded"],
+        relatedPapers: [],
+      },
+      {
+        title: "Autonomous Self-Driving Car",
+        img: "/projects/post_img.png",
+        desc: "Prototype robotic vehicle with dual modes. 'Autonomous' mode uses Computer Vision for lane detection; 'Manual' mode streams live video to a MeteorJS client app.",
+        tags: ["C", "ATmega32", "OpenCV", "MeteorJS", "Robotics"],
+        repoUrl: "https://github.com/Salo7a/Self-Driving-Car",
+        demoUrl: "#",
+        badges: ["Robotics"],
+        relatedPapers: [],
+      },
+      {
+        title: "Indoor Localization System",
+        img: "/projects/post_img.png",
+        desc: "WiFi-based triangulation system. Uses ESP8266 modules to determine device location indoors and displays it on a real-time map via Firebase and MeteorJS.",
+        tags: ["ESP8266", "Firebase", "MeteorJS", "IoT"],
+        repoUrl: "https://github.com/Salo7a/In-Door-Tracker",
+        demoUrl: "#",
+        badges: ["IoT"],
+        relatedPapers: [],
+      },
+      {
+        title: "Temperature Controller Module",
+        img: "/projects/post_img.png",
+        desc: "Industrial heating simulation communicating via SPI. Controls a heater based on user targets and operates in 4 logic states (Standby, Operational, Normal, Error).",
+        tags: ["C", "ATmega32", "SPI", "Proteus"],
+        repoUrl: "https://github.com/Salo7a/Temperature-Controller-Module",
+        demoUrl: "#",
+        badges: ["Embedded"],
+        relatedPapers: [],
+      },
+      {
+        title: "Robotic Hand",
+        img: "/projects/post_img.png",
+        desc: "A mimicry robotic hand controlled by a sensor-embedded glove. Maps human hand movements to the robotic servos in real-time.",
+        tags: ["Embedded C", "Sensors", "Robotics"],
+        repoUrl: "#",
+        demoUrl: "#",
+        badges: ["Robotics"],
+        relatedPapers: [],
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout title="Projects" sideBarActiveItemID="projects">
+  {
+    projectSections.map((section) => (
+      <div class="mb-10">
+        <div class="text-3xl w-full font-bold mb-5">{section.title}</div>
+        {section.items.map((project, idx) => (
+          <>
+            <HorizontalCard
+              title={project.title}
+              img={project.img}
+              desc={project.desc}
+              badges={project.badges}
+              url={project.demoUrl !== "#" ? project.demoUrl : project.repoUrl}
+              target="_blank"
+            />
+
+            <div class="mt-2 mb-4 ml-4">
+              <div class="flex flex-wrap gap-2 mb-2">
+                {project.tags && project.tags.map((tag) => (
+                  <span class="badge badge-outline opacity-80">{tag}</span>
+                ))}
+  </div>
+
+              <div class="flex gap-3 items-center text-sm">
+                {project.repoUrl !== "#" && (
+                  <a href={project.repoUrl} target="_blank" class="btn btn-ghost btn-xs gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style="fill: currentColor;"><path d="M9.04 7.913 12 9.78l2.96-1.868a1 1 0 1 1 1.08 1.675L12.54 11.22l3.5 2.207a1 1 0 0 1-1.08 1.675L12 13.234l-2.96 1.868a1 1 0 1 1-1.08-1.675l3.5-2.207-3.5-2.208a1 1 0 0 1 1.08-1.675Z"></path><path fill-rule="evenodd" d="M12 2c-2.288 0-4.042 0-5.37.123-1.346.124-2.39.38-3.25.982a5 5 0 0 0-1.275 1.275c-.602.86-.858 1.904-.982 3.25C1 8.958 1 10.712 1 13c0 2.288 0 4.042.123 5.37.124 1.346.38 2.39.982 3.25a5 5 0 0 0 1.275 1.275c.86.602 1.904.858 3.25.982C7.958 24 9.712 24 12 24c2.288 0 4.042 0 5.37-.123 1.346-.124 2.39-.38 3.25-.982a5 5 0 0 0 1.275-1.275c.602-.86.858-1.904.982-3.25C23 17.042 23 15.288 23 13c0-2.288 0-4.042-.123-5.37-.124-1.346-.38-2.39-.982-3.25a5 5 0 0 0-1.275-1.275c-.86-.602-1.904-.858-3.25-.982C16.042 2 14.288 2 12 2Zm-4.37 1.617C7.957 3.496 9.593 3.5 12 3.5c2.406 0 4.043-.004 5.37.117 1.304.12 1.955.349 2.395.658.36.253.652.584.875.975.309.54.538 1.291.658 2.595.12 1.327.117 2.963.117 5.359 0 2.397.003 4.033-.117 5.36-.12 1.304-.35 2.055-.658 2.595a3 3 0 0 1-.875.875c-.44.31-1.09.538-2.395.658-1.326.12-2.963.117-5.37.117-2.407 0-4.043.003-5.37-.117-1.304-.12-1.955-.35-2.395-.658a3 3 0 0 1-.875-.875c-.31-.54-.538-1.291-.658-2.595C2.5 17.033 2.5 15.397 2.5 13c0-2.396.003-4.033.117-5.36.12-1.304.35-2.055.658-2.595.223-.391.515-.722.875-.975.44-.309 1.09-.538 2.395-.658Z" clip-rule="evenodd"></path></svg>
+                    Code
+                  </a>
+                )}
+                {project.demoUrl !== "#" && (
+                  <a href={project.demoUrl} target="_blank" class="btn btn-ghost btn-xs gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style="fill: currentColor;"><path d="m13.913 4.022 6.065 6.065a1.5 1.5 0 0 1 0 2.121l-6.065 6.065A1.5 1.5 0 0 1 11.5 17.915l2.94-2.94H5.5a1.5 1.5 0 0 1 0-3h8.94l-2.94-2.94a1.5 1.5 0 0 1 2.121-2.121Z"></path></svg>
+                    Demo
+                  </a>
+                )}
+              </div>
+
+              {project.relatedPapers && project.relatedPapers.length > 0 && (
+                <div class="mt-2 text-sm">
+                  <div class="font-semibold">Related papers</div>
+                  <ul class="list-disc ml-4">
+                    {project.relatedPapers.map((paper) => (
+                      <li>
+                        <a href={paper.url} target="_blank" class="link link-primary flex items-center gap-1">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" style="fill: currentColor;"><path d="M19 21H5a2 2 0 0 1-2-2V4.993C3 3.893 3.898 3 4.99 3H8v2H5v14h14v-3h2v3a2 2 0 0 1-2 2ZM13 5h4.586l-7.607 7.607 1.414 1.414L19 6.414V11h2V3h-8v2Z"></path></svg>
+                          {paper.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+  </div>
+
+            {idx < section.items.length - 1 && <div class="divider my-0"></div>}
+          </>
+        ))}
+        <div class="divider my-8"></div>
+      </div>
+    ))
+  }
+</BaseLayout>
