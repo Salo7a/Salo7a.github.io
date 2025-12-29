@@ -4,22 +4,54 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
 const projectSections = [
   {
-    title: "Featured Flagship Projects",
+    title: "Featured Projects",
     items: [
       {
-        title: "VPAX & VoyanceX (Medical Imaging Ecosystem)",
-        img: "/projects/Voyance.png", // Replace with actual project screenshot
-        desc: "A cloud-native PACS and C# acquisition software suite. Engineered the system to handle 150x peak traffic loads and reduced database costs by 30% via advanced query optimization. Implemented a Backend-for-Frontend (BFF) to decrease load times by 25% and designed a granular RBAC system for secure multi-tenancy.",
-        tags: ["Cloud-Native", "C#", "React", "Microservices", "RBAC", "Optimization"],
-        repoUrl: "#", // Add your Repo URL
-        demoUrl: "#", // Add your Live Site URL
-        badges: ["Flagship", "MedTech"],
+        title: "VPAX (Cloud-Native Medical Imaging)",
+        img: "/projects/Voyance.png",
+        desc: `
+          A large-scale, cloud-native Picture Archiving and Communication System (PACS) designed to manage medical imaging workflows.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Architecture & Scale:</strong> Engineered the system to handle <strong>150x peak traffic loads</strong> and reduced database costs by <strong>30%</strong> via advanced query optimizations and caching strategies.</li>
+            <li><strong>Performance:</strong> Implemented a <strong>Backend-for-Frontend (BFF)</strong> pattern, reducing application load times by <strong>25%</strong>.</li>
+            <li><strong>Security:</strong> Designed a granular Role-Based Access Control (RBAC) system for strict, secure data isolation in a multi-tenant environment.</li>
+            <li><strong>AI Integration:</strong> Integrated generative AI models into core healthcare workflows to boost practitioner efficiency.</li>
+          </ul>
+        `,
+        tags: ["Cloud-Native", "React", "Microservices", "RBAC", "Optimization"],
+        repoUrl: "#",
+        demoUrl: "https://vpax.ai",
+        badges: ["MedTech"],
+        relatedPapers: [],
+      },
+      {
+        title: "VoyanceX (Acquisition Software)",
+        img: "/projects/Voyance.png",
+        desc: `
+          A robust C# desktop application for X-ray acquisition, serving as the bridge between hardware devices and the VPAX cloud ecosystem.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Hardware Integration:</strong> Enhanced compatibility across diverse client setups by integrating new X-ray devices and sensors.</li>
+            <li><strong>Seamless Sync:</strong> Developed secure data pipelines to ensure real-time synchronization of heavy imaging data with the VPAX cloud.</li>
+            <li><strong>Core Development:</strong> Maintained the full lifecycle of the application, ensuring stability and performance in clinical settings.</li>
+          </ul>
+        `,
+        tags: ["C#", ".NET", "Desktop Dev", "Hardware Integration"],
+        repoUrl: "#",
+        demoUrl: "https://voyance.health",
+        badges: ["Desktop", "MedTech"],
         relatedPapers: [],
       },
       {
         title: "AI-Powered Email Client",
         img: "/projects/post_img.png",
-        desc: "A generative AI email client built with NestJS and Postgres. Features a 'Chat with your Inbox' RAG system, thread summarization, and auto-replies. Designed with a provider-agnostic architecture to seamlessly support Gmail, Outlook, and other providers.",
+        desc: `
+          A next-generation email client built to streamline inbox management using Generative AI.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>RAG Implementation:</strong> Built a "Chat with your Inbox" feature using <strong>Retrieval-Augmented Generation</strong> (RAG) and LangChain.</li>
+            <li><strong>AI Features:</strong> Implemented automatic thread summarization, daily digests, and context-aware reply generation.</li>
+            <li><strong>Architecture:</strong> Designed a <strong>provider-agnostic backend</strong> with NestJS and Postgres, allowing seamless integration with Gmail, Outlook, and other IMAP services.</li>
+          </ul>
+        `,
         tags: ["NestJS", "Postgres", "LangChain", "RAG", "Generative AI", "TypeScript"],
         repoUrl: "#",
         demoUrl: "https://maxwel.ai",
@@ -29,7 +61,15 @@ const projectSections = [
       {
         title: "Microservices Ticketing Platform",
         img: "/projects/post_img.png",
-        desc: "A scalable, event-driven e-commerce exchange for browsing, buying, and selling tickets. Built using a Microservices architecture with NATS for event communication, Redis/Mongo for storage, and Stripe for payments. Secured with JWT auth and deployed via Kubernetes.",
+        desc: `
+          A scalable, event-driven e-commerce exchange that allows users to browse, buy, and sell event tickets.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Microservices Architecture:</strong> orchestrated using <strong>Kubernetes</strong> and <strong>Docker</strong> for high availability.</li>
+            <li><strong>Event-Driven Design:</strong> Utilized <strong>NATS Streaming Server</strong> for asynchronous service communication and data consistency.</li>
+            <li><strong>Tech Stack:</strong> Built with NodeJS/Express (Backend), NextJS (Frontend), Redis (Caching), and Stripe (Payments).</li>
+            <li><strong>Reliability:</strong> Secured with JWT authentication and fully tested with Jest and CI/CD pipelines.</li>
+          </ul>
+        `,
         tags: ["NodeJS", "NextJS", "Docker", "Kubernetes", "NATS", "Redis", "Stripe"],
         repoUrl: "https://github.com/Salo7a/My-Tickets-Market",
         demoUrl: "#",
@@ -39,10 +79,17 @@ const projectSections = [
       {
         title: "Medical Image Analysis Plugin",
         img: "/projects/post_img.png",
-        desc: "A 3DSlicer plugin for cardiac CT assessment and health risk calculation. Uses PyTorch for deep learning segmentation and Flask on AWS EC2 for hybrid cloud processing. Research published in the 2024 41st National Radio Science Conference (NRSC).",
+        desc: `
+          A research-grade 3DSlicer plugin for cardiac CT assessment and health risk calculation.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Deep Learning:</strong> Uses <strong>PyTorch</strong> models for accurate segmentation of coronary artery calcification.</li>
+            <li><strong>Hybrid Processing:</strong> Offloads heavy computation to an <strong>AWS EC2</strong> Flask server while maintaining a responsive local PyQt5 interface.</li>
+            <li><strong>Impact:</strong> Results and methodology were published in the <strong>2024 41st National Radio Science Conference (NRSC)</strong>.</li>
+          </ul>
+        `,
         tags: ["Python", "PyQt5", "PyTorch", "AWS", "Flask", "3DSlicer"],
         repoUrl: "https://github.com/Salo7a/Automatic-CaScoring-From-Chest-CT",
-        demoUrl: "#", // Linked to publication DOI
+        demoUrl: "#",
         badges: ["Research", "AI/MedTech"],
         relatedPapers: [
           { label: "NRSC 2024 Paper", url: "https://doi.org/10.1109/NRSC61581.2024.10510468" },
@@ -56,7 +103,14 @@ const projectSections = [
       {
         title: "ERP System for Student Organizations",
         img: "/projects/post_img.png",
-        desc: "A management system used by 2000+ students to handle recruitment, interviews, and KPIs. Integrates NodeJS/Express with Google APIs (Sheets, Recaptcha) for live data syncing and simplified administration.",
+        desc: `
+          A comprehensive management system designed for student organizations, facilitating recruitment and operations.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Impact:</strong> Deployed and actively used by <strong>2,000+ students</strong>.</li>
+            <li><strong>Key Features:</strong> Manages recruitment pipelines, interview scheduling, member databases, and KPI monitoring.</li>
+            <li><strong>Integration:</strong> Seamlessly syncs data with <strong>Google Sheets</strong> via Google APIs for non-technical admins.</li>
+          </ul>
+        `,
         tags: ["NodeJS", "MySQL", "Google APIs", "Express", "Bootstrap"],
         repoUrl: "https://github.com/Salo7a/ERP-System-HRPortal",
         demoUrl: "#",
@@ -66,7 +120,14 @@ const projectSections = [
       {
         title: "Healthcare CMMS",
         img: "/projects/post_img.png",
-        desc: "A Computerized Maintenance Management System for medical assets. Manages preventive/corrective work orders and inventory with real-time notifications via Socket.IO.",
+        desc: `
+          A Computerized Maintenance Management System (CMMS) tailored for medical facilities.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Asset Management:</strong> Tracks inventory and manages lifecycles for medical equipment.</li>
+            <li><strong>Workflow:</strong> Handles preventive and corrective maintenance work orders.</li>
+            <li><strong>Real-Time:</strong> Features live notifications for urgent maintenance requests using <strong>Socket.IO</strong>.</li>
+          </ul>
+        `,
         tags: ["NodeJS", "Socket.IO", "SQLite", "Sequelize", "Real-time"],
         repoUrl: "https://github.com/Salo7a/Healthcare-CMMS",
         demoUrl: "#",
@@ -76,7 +137,14 @@ const projectSections = [
       {
         title: "Vending Machine API",
         img: "/projects/post_img.png",
-        desc: "A secure REST API for automated retail. Features deposit/withdrawal logic, product management, and stock tracking. Implements JWT-based RBAC and robust exception handling with Swagger documentation.",
+        desc: `
+          A secure, production-ready REST API designed to automate retail vending operations.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Security:</strong> Implements <strong>JWT-based Role-Based Access Control (RBAC)</strong> for admin and user security.</li>
+            <li><strong>Logic:</strong> Handles complex transaction logic including deposits, purchases, and exact change/withdrawal calculations.</li>
+            <li><strong>Documentation:</strong> Fully documented using <strong>Swagger/OpenAPI</strong> specifications.</li>
+          </ul>
+        `,
         tags: ["Java", "Spring Boot", "PostgreSQL", "Swagger", "Security"],
         repoUrl: "https://github.com/Salo7a/spring-boot-vending-api",
         demoUrl: "#",
@@ -86,7 +154,13 @@ const projectSections = [
       {
         title: "Store API",
         img: "/projects/post_img.png",
-        desc: "A scalable e-commerce backend where users can list items and generate invoices. Utilizes NestJS interceptors for unified responses and TypeORM for efficient database management.",
+        desc: `
+          A scalable backend for e-commerce platforms focusing on modularity and clean architecture.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Architecture:</strong> Built with <strong>NestJS</strong> using custom interceptors for unified API responses.</li>
+            <li><strong>Database:</strong> Utilizes <strong>TypeORM</strong> and MySQL for efficient relationship management and invoicing.</li>
+          </ul>
+        `,
         tags: ["NestJS", "TypeORM", "MySQL", "API Design"],
         repoUrl: "#",
         demoUrl: "#",
@@ -96,7 +170,14 @@ const projectSections = [
       {
         title: "Food Ordering App",
         img: "/projects/post_img.png",
-        desc: "A full-stack MERN application allowing users to browse menus, place orders, and track cart state. Built with TypeScript and Redux for type-safe state management.",
+        desc: `
+          A full-stack application enabling seamless food ordering for restaurants.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>State Management:</strong> leveraged <strong>Redux</strong> for complex cart management and user state.</li>
+            <li><strong>Type Safety:</strong> Built entirely with <strong>TypeScript</strong> to ensure code reliability and maintainability.</li>
+            <li><strong>Stack:</strong> React frontend connected to an Express/MongoDB backend.</li>
+          </ul>
+        `,
         tags: ["React", "Redux", "Express", "MongoDB", "TypeScript"],
         repoUrl: "https://github.com/Salo7a/food-order-app",
         demoUrl: "#",
@@ -106,7 +187,13 @@ const projectSections = [
       {
         title: "DMaxCare (Dental HIS)",
         img: "/projects/post_img.png",
-        desc: "A Dental Services-Oriented Hospital Information System. Designed the full database schema and implemented both backend and frontend using Sequelize ORM and Bootstrap.",
+        desc: `
+          A specialized Hospital Information System (HIS) for dental clinics.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Full-Stack Development:</strong> Designed the database schema and built both the backend (NodeJS) and frontend (Bootstrap/jQuery).</li>
+            <li><strong>Data Handling:</strong> Used <strong>Sequelize ORM</strong> for structured interaction with the MySQL database.</li>
+          </ul>
+        `,
         tags: ["NodeJS", "MySQL", "Sequelize", "Bootstrap"],
         repoUrl: "https://github.com/Salo7a/Dental-Clinic-System",
         demoUrl: "#",
@@ -121,7 +208,14 @@ const projectSections = [
       {
         title: "Multi-Modal Data Analysis Tool",
         img: "/projects/post_img.png",
-        desc: "A versatile tool for processing tabular, image, and text data. Generates statistical covariance (Pandas), color histograms (OpenCV), and Word2Vec visualizations (T-SNE).",
+        desc: `
+          A versatile desktop tool capable of ingesting and analyzing tabular, image, and text data.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Tabular:</strong> Calculates descriptive statistics and covariance using <strong>Pandas</strong>.</li>
+            <li><strong>Image:</strong> Generates color histograms and segmentation masks using <strong>OpenCV</strong>.</li>
+            <li><strong>NLP:</strong> Utilizes <strong>Word2Vec</strong> and <strong>T-SNE</strong> to visualize text vector embeddings.</li>
+          </ul>
+        `,
         tags: ["Python", "React", "Flask", "OpenCV", "NLP", "Pandas"],
         repoUrl: "https://github.com/Salo7a/COVID-19-Visualizer",
         demoUrl: "#",
@@ -131,7 +225,14 @@ const projectSections = [
       {
         title: "Songs Identifier",
         img: "/projects/post_img.png",
-        desc: "An audio fingerprinting tool that identifies songs by comparing extracted features against a database. Displays similarity percentages and metadata using a PyQt5 interface.",
+        desc: `
+          An audio fingerprinting application similar to Shazam.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Algorithm:</strong> Extracts audio features from source files and stores them in a fingerprint database.</li>
+            <li><strong>Matching:</strong> Identifies recorded songs by comparing features and calculating similarity percentages.</li>
+            <li><strong>UI:</strong> Built with <strong>PyQt5</strong> for a responsive desktop experience.</li>
+          </ul>
+        `,
         tags: ["Python", "PyQt5", "Audio Processing", "Algorithms"],
         repoUrl: "https://github.com/Salo7a/Shazam-Clone",
         demoUrl: "#",
@@ -141,8 +242,15 @@ const projectSections = [
       {
         title: "Music Equalizer & Visualizer",
         img: "/projects/post_img.png",
-        desc: "A real-time audio player featuring a custom equalizer and animated frequency visualizations. Built using NumPy and SciPy for signal processing.",
-        tags: ["Python", "NumPy", "SciPy", "DSP"],
+        desc: `
+          A real-time audio player and signal processing tool.
+          <ul class="list-disc ml-4 mt-2 text-sm">
+            <li><strong>Signal Processing:</strong> Uses <strong>NumPy</strong> and <strong>SciPy</strong> for real-time EQ and analysis.</li>
+            <li><strong>Visuals:</strong> Animated frequency visualizations synced to playback.</li>
+            <li><strong>UI:</strong> PyQt5 desktop interface with responsive controls.</li>
+          </ul>
+        `,
+        tags: ["Python", "NumPy", "SciPy", "DSP", "PyQt5"],
         repoUrl: "https://github.com/Salo7a/Music-Equalizer-and-Visualizer",
         demoUrl: "#",
         badges: ["DSP"],
@@ -156,7 +264,7 @@ const projectSections = [
       {
         title: "Smart Hospital Registration System",
         img: "/projects/post_img.png",
-        desc: "IoT solution easing patient queuing. Integrates a smart kiosk (measuring Heart Rate, SpO2) and an NFC-enabled Android app for instant inpatient record management.",
+        desc: "IoT solution easing patient queuing with a smart kiosk (SpO2, Heart Rate) and NFC-enabled Android app for inpatient record management.",
         tags: ["Java", "Android", "IoT", "NFC", "PHP"],
         repoUrl: "#",
         demoUrl: "#",
@@ -166,7 +274,7 @@ const projectSections = [
       {
         title: "Autonomous Self-Driving Car",
         img: "/projects/post_img.png",
-        desc: "Prototype robotic vehicle with dual modes. 'Autonomous' mode uses Computer Vision for lane detection; 'Manual' mode streams live video to a MeteorJS client app.",
+        desc: "Dual-mode robotic vehicle: CV-based autonomous lane detection and manual MeteorJS control with live streaming.",
         tags: ["C", "ATmega32", "OpenCV", "MeteorJS", "Robotics"],
         repoUrl: "https://github.com/Salo7a/Self-Driving-Car",
         demoUrl: "#",
@@ -176,7 +284,7 @@ const projectSections = [
       {
         title: "Indoor Localization System",
         img: "/projects/post_img.png",
-        desc: "WiFi-based triangulation system. Uses ESP8266 modules to determine device location indoors and displays it on a real-time map via Firebase and MeteorJS.",
+        desc: "ESP8266 + Firebase + MeteorJS WiFi triangulation to map device location indoors in real-time.",
         tags: ["ESP8266", "Firebase", "MeteorJS", "IoT"],
         repoUrl: "https://github.com/Salo7a/In-Door-Tracker",
         demoUrl: "#",
@@ -186,7 +294,7 @@ const projectSections = [
       {
         title: "Temperature Controller Module",
         img: "/projects/post_img.png",
-        desc: "Industrial heating simulation communicating via SPI. Controls a heater based on user targets and operates in 4 logic states (Standby, Operational, Normal, Error).",
+        desc: "Industrial heating simulation via SPI; supports multiple logic states (Standby, Operational, Normal, Error) with ATmega32.",
         tags: ["C", "ATmega32", "SPI", "Proteus"],
         repoUrl: "https://github.com/Salo7a/Temperature-Controller-Module",
         demoUrl: "#",
@@ -196,7 +304,7 @@ const projectSections = [
       {
         title: "Robotic Hand",
         img: "/projects/post_img.png",
-        desc: "A mimicry robotic hand controlled by a sensor-embedded glove. Maps human hand movements to the robotic servos in real-time.",
+        desc: "Sensor-embedded glove drives a robotic hand replica in real time for gesture mimicry.",
         tags: ["Embedded C", "Sensors", "Robotics"],
         repoUrl: "#",
         demoUrl: "#",
@@ -207,7 +315,6 @@ const projectSections = [
   },
 ];
 ---
-
 <BaseLayout title="Projects" sideBarActiveItemID="projects">
   {
     projectSections.map((section) => (
@@ -222,47 +329,11 @@ const projectSections = [
               badges={project.badges}
               url={project.demoUrl !== "#" ? project.demoUrl : project.repoUrl}
               target="_blank"
+              repoUrl={project.repoUrl}
+              demoUrl={project.demoUrl}
+              relatedPapers={project.relatedPapers}
+              tags={project.tags}
             />
-
-            <div class="mt-2 mb-4 ml-4">
-              <div class="flex flex-wrap gap-2 mb-2">
-                {project.tags && project.tags.map((tag) => (
-                  <span class="badge badge-outline opacity-80">{tag}</span>
-                ))}
-  </div>
-
-              <div class="flex gap-3 items-center text-sm">
-                {project.repoUrl !== "#" && (
-                  <a href={project.repoUrl} target="_blank" class="btn btn-ghost btn-xs gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style="fill: currentColor;"><path d="M9.04 7.913 12 9.78l2.96-1.868a1 1 0 1 1 1.08 1.675L12.54 11.22l3.5 2.207a1 1 0 0 1-1.08 1.675L12 13.234l-2.96 1.868a1 1 0 1 1-1.08-1.675l3.5-2.207-3.5-2.208a1 1 0 0 1 1.08-1.675Z"></path><path fill-rule="evenodd" d="M12 2c-2.288 0-4.042 0-5.37.123-1.346.124-2.39.38-3.25.982a5 5 0 0 0-1.275 1.275c-.602.86-.858 1.904-.982 3.25C1 8.958 1 10.712 1 13c0 2.288 0 4.042.123 5.37.124 1.346.38 2.39.982 3.25a5 5 0 0 0 1.275 1.275c.86.602 1.904.858 3.25.982C7.958 24 9.712 24 12 24c2.288 0 4.042 0 5.37-.123 1.346-.124 2.39-.38 3.25-.982a5 5 0 0 0 1.275-1.275c.602-.86.858-1.904.982-3.25C23 17.042 23 15.288 23 13c0-2.288 0-4.042-.123-5.37-.124-1.346-.38-2.39-.982-3.25a5 5 0 0 0-1.275-1.275c-.86-.602-1.904-.858-3.25-.982C16.042 2 14.288 2 12 2Zm-4.37 1.617C7.957 3.496 9.593 3.5 12 3.5c2.406 0 4.043-.004 5.37.117 1.304.12 1.955.349 2.395.658.36.253.652.584.875.975.309.54.538 1.291.658 2.595.12 1.327.117 2.963.117 5.359 0 2.397.003 4.033-.117 5.36-.12 1.304-.35 2.055-.658 2.595a3 3 0 0 1-.875.875c-.44.31-1.09.538-2.395.658-1.326.12-2.963.117-5.37.117-2.407 0-4.043.003-5.37-.117-1.304-.12-1.955-.35-2.395-.658a3 3 0 0 1-.875-.875c-.31-.54-.538-1.291-.658-2.595C2.5 17.033 2.5 15.397 2.5 13c0-2.396.003-4.033.117-5.36.12-1.304.35-2.055.658-2.595.223-.391.515-.722.875-.975.44-.309 1.09-.538 2.395-.658Z" clip-rule="evenodd"></path></svg>
-                    Code
-                  </a>
-                )}
-                {project.demoUrl !== "#" && (
-                  <a href={project.demoUrl} target="_blank" class="btn btn-ghost btn-xs gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" style="fill: currentColor;"><path d="m13.913 4.022 6.065 6.065a1.5 1.5 0 0 1 0 2.121l-6.065 6.065A1.5 1.5 0 0 1 11.5 17.915l2.94-2.94H5.5a1.5 1.5 0 0 1 0-3h8.94l-2.94-2.94a1.5 1.5 0 0 1 2.121-2.121Z"></path></svg>
-                    Demo
-                  </a>
-                )}
-              </div>
-
-              {project.relatedPapers && project.relatedPapers.length > 0 && (
-                <div class="mt-2 text-sm">
-                  <div class="font-semibold">Related papers</div>
-                  <ul class="list-disc ml-4">
-                    {project.relatedPapers.map((paper) => (
-                      <li>
-                        <a href={paper.url} target="_blank" class="link link-primary flex items-center gap-1">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" style="fill: currentColor;"><path d="M19 21H5a2 2 0 0 1-2-2V4.993C3 3.893 3.898 3 4.99 3H8v2H5v14h14v-3h2v3a2 2 0 0 1-2 2ZM13 5h4.586l-7.607 7.607 1.414 1.414L19 6.414V11h2V3h-8v2Z"></path></svg>
-                          {paper.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-  </div>
-
             {idx < section.items.length - 1 && <div class="divider my-0"></div>}
           </>
         ))}
